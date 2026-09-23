@@ -47,6 +47,11 @@ class json_search_test(unittest.TestCase):
         (deny-by-default, tránh bypass trust boundary)'''
         result = json_search("apiKey", data)
         self.assertEqual([], result)
+    def test_operator_can_read_managementIpAddress(self):
+        '''operator nằm trong POLICY["managementIpAddress"] -> phải đọc được
+        (positive case, đảm bảo không chặn nhầm role hợp lệ)'''
+        result = json_search("managementIpAddress", data, role="operator")
+        self.assertNotEqual([], result)
 
 
 if __name__ == '__main__':
