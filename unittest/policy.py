@@ -6,8 +6,8 @@
 # json_search(key, data, role=...) với một role KHÔNG nằm trong danh sách
 # cho phép của key đó, và kỳ vọng kết quả trả về là rỗng.
 
-POLICY = {
+policy = {
     "apiKey": ["admin"],
     "managementIpAddress": ["admin", "operator"],
-    "issueSummary": ["admin", "operator", "viewer"],
+    "issueSummary": ["admin", "operator", "viewer"]
 }
